@@ -1,5 +1,4 @@
-var cards = 
-[
+var cards = [
     'H2',
     'H3',
     'H4',
@@ -12,7 +11,7 @@ var cards =
     'HJ',
     'HQ',
     'HK',
-    'HE',
+    'HA',
     'S2',
     'S3',
     'S4',
@@ -25,7 +24,7 @@ var cards =
     'SJ',
     'SQ',
     'SK',
-    'SE',
+    'SA',
     'D2',
     'D3',
     'D4',
@@ -38,7 +37,7 @@ var cards =
     'DJ',
     'DQ',
     'DK',
-    'DE',
+    'DA',
     'C2',
     'C3',
     'C4',
@@ -51,24 +50,31 @@ var cards =
     'CJ',
     'CQ',
     'CK',
-    'CE',
+    'CA',
 ];
 
 var players = [
-    {Name: 'Player 1', cardOne: '', cardTwo: ''}, 
-    {Name: 'Player 2', cardOne: '', cardTwo: ''}, 
-    {Name: 'Player 3', cardOne: '', cardTwo: ''}, 
-    {Name: 'Player 4', cardOne: '', cardTwo: ''}, 
-    {Name: 'Player 5', cardOne: '', cardTwo: ''}, 
-    {Name: 'Player 6', cardOne: '', cardTwo: ''}
+    {name: 'Player 1', cardOne: '', cardTwo: ''}, 
+    {name: 'Player 2', cardOne: '', cardTwo: ''}, 
+    {name: 'Player 3', cardOne: '', cardTwo: ''}, 
+    {name: 'Player 4', cardOne: '', cardTwo: ''}, 
+    {name: 'Player 5', cardOne: '', cardTwo: ''}, 
+    {name: 'Player 6', cardOne: '', cardTwo: ''},
+    {name: 'Player 7', cardOne: '', cardTwo: ''},
+    {name: 'Player 8', cardOne: '', cardTwo: ''},
+    {name: 'Player 9', cardOne: '', cardTwo: ''}
     ];
 
 function deal(){
-    players.forEach(function(){
-        let randomNumber = Math.random(Math.floor(Math.random() * cards.length))
-        this.cardOne = cards[randomNumber];
-        this.cardTwo = cards[randomNumber];
-    })
-};
+    players.forEach(function(player){
+        let randomNumber = Math.floor(Math.random() * (cards.length - 1));
+        cards.splice(randomNumber, 1);
 
-console.log(players)
+        let randomNumber2 = Math.floor(Math.random() * (cards.length - 1));
+        cards.splice(randomNumber2, 1);
+
+        player.cardOne = cards[randomNumber];
+        player.cardTwo = cards[randomNumber2];
+    })
+    console.log(players);
+};
