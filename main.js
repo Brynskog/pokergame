@@ -63,9 +63,9 @@ var players = [
     {name: 'Player 7', cardOne: '', cardTwo: ''},
     {name: 'Player 8', cardOne: '', cardTwo: ''},
     {name: 'Player 9', cardOne: '', cardTwo: ''}
-    ];
+];
 
-function deal(){
+function dealHoleCards(){
     players.forEach(function(player){
         let randomNumber = Math.floor(Math.random() * (cards.length - 1));
         cards.splice(randomNumber, 1);
@@ -77,4 +77,30 @@ function deal(){
         player.cardTwo = cards[randomNumber2];
     })
     console.log(players);
+};
+
+function dealFlop(){
+    let flop = [];
+
+    while (flop.length <= 2){
+        let randomNumber = Math.floor(Math.random() * (cards.length - 1));       
+        flop.push(cards[randomNumber]);
+        cards.splice(randomNumber, 1);
+    }
+    
+    console.log(flop);
+};
+
+function dealTurn(){
+    let randomNumber = Math.floor(Math.random() * (cards.length - 1));
+    let turn = cards[randomNumber];
+    cards.splice(randomNumber, 1);
+    console.log(turn);
+};
+
+function dealRiver(){
+    let randomNumber = Math.floor(Math.random() * (cards.length - 1));
+    let river = cards[randomNumber];
+    cards.splice(randomNumber, 1);
+    console.log(river);
 };
