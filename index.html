@@ -1,12 +1,30 @@
 <html>
     <head>
-        <script src="main.js"></script>
+        
     </head>
     <body>
-        <div></div>
-        <button onclick="dealHoleCards()">Deal hole cards</button>
-        <button onclick="dealFlop()">Deal flop</button>
-        <button onclick="dealTurn()">Deal turn</button>
-        <button onclick="dealRiver()">Deal river</button>
+        <section style="display:block;">
+            <h1>Poker game</h1>        
+            <button onclick="dealHoleCards()">Deal hole cards</button>
+            <button onclick="dealFlop()">Deal flop</button>
+            <button onclick="dealTurn()">Deal turn</button>
+            <button onclick="dealRiver()">Deal river</button>
+            <button onclick="reset()">Reset hand</button>
+        </section>
+        <section style="display:inline-block;">
+            <h2>Seats</h2>
+            <ul id="seats">
+
+            </ul>
+        </section>
+        <section style="display:inline-block;">
+            <h2>Board</h2>
+            <ul id="board">
+                
+            </ul>
+        </section>
     </body>
+    <footer>
+        <script src="main.js"></script>
+    </footer>
 </html>
