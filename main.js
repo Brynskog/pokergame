@@ -83,13 +83,7 @@ function dealHoleCards() {
     cards.splice(randomNumber, 1);
 
     let listItem = document.createElement("li");
-    listItem.innerHTML =
-      "<p>Player name: " +
-      player.name +
-      " </p><p> Cards: " +
-      player.cardOne +
-      "-" +
-      player.cardTwo;
+    listItem.innerHTML = `<p>Player name: ${player.name} </p><p> Cards: ${player.cardOne}-${player.cardTwo}`;
     document.getElementById("seats").appendChild(listItem);
   });
 }
@@ -102,7 +96,7 @@ function dealFlop() {
     cards.splice(randomNumber, 1);
   }
   let boardItem = document.createElement("li");
-  boardItem.innerHTML = "<p>" + flop + "</p>";
+  boardItem.innerHTML = `<p>${flop}</p>`;
   document.getElementById("board").appendChild(boardItem);
 }
 
@@ -112,7 +106,7 @@ function dealTurn() {
   cards.splice(randomNumber, 1);
 
   let boardItem = document.createElement("li");
-  boardItem.innerHTML = "<p>" + turn + "</p>";
+  boardItem.innerHTML = `<p>${turn}</p>`;
   document.getElementById("board").appendChild(boardItem);
 }
 
@@ -122,7 +116,7 @@ function dealRiver() {
   cards.splice(randomNumber, 1);
 
   let boardItem = document.createElement("li");
-  boardItem.innerHTML = "<p>" + river + "</p>";
+  boardItem.innerHTML = `<p>${river}</p>`;
   document.getElementById("board").appendChild(boardItem);
 }
 
