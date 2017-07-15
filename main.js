@@ -73,8 +73,7 @@ function generateRandomNumber(randomNumber) {
 }
 
 function dealHoleCards() {
-  
-  players.forEach(function(player) {
+  players.forEach(player => {
     let randomNumber = generateRandomNumber();
     player.cardOne = cards[randomNumber];
     cards.splice(randomNumber, 1);
@@ -83,9 +82,15 @@ function dealHoleCards() {
     player.cardTwo = cards[randomNumber];
     cards.splice(randomNumber, 1);
 
-    let listItem = document.createElement('li');
-    listItem.innerHTML = '<p>Player name: ' + player.name + ' </p><p> Cards: ' + player.cardOne + '-' + player.cardTwo;
-    document.getElementById('seats').appendChild(listItem);
+    let listItem = document.createElement("li");
+    listItem.innerHTML =
+      "<p>Player name: " +
+      player.name +
+      " </p><p> Cards: " +
+      player.cardOne +
+      "-" +
+      player.cardTwo;
+    document.getElementById("seats").appendChild(listItem);
   });
 }
 
@@ -96,19 +101,19 @@ function dealFlop() {
     flop.push(cards[randomNumber]);
     cards.splice(randomNumber, 1);
   }
-  let boardItem = document.createElement('li');
-  boardItem.innerHTML = '<p>' + flop + '</p>';
-  document.getElementById('board').appendChild(boardItem);
+  let boardItem = document.createElement("li");
+  boardItem.innerHTML = "<p>" + flop + "</p>";
+  document.getElementById("board").appendChild(boardItem);
 }
 
 function dealTurn() {
   let randomNumber = generateRandomNumber();
   let turn = cards[randomNumber];
   cards.splice(randomNumber, 1);
-  
-  let boardItem = document.createElement('li');
-  boardItem.innerHTML = '<p>' + turn + '</p>';
-  document.getElementById('board').appendChild(boardItem);
+
+  let boardItem = document.createElement("li");
+  boardItem.innerHTML = "<p>" + turn + "</p>";
+  document.getElementById("board").appendChild(boardItem);
 }
 
 function dealRiver() {
@@ -116,13 +121,13 @@ function dealRiver() {
   let river = cards[randomNumber];
   cards.splice(randomNumber, 1);
 
-  let boardItem = document.createElement('li');
-  boardItem.innerHTML = '<p>' + river + '</p>';
-  document.getElementById('board').appendChild(boardItem);
+  let boardItem = document.createElement("li");
+  boardItem.innerHTML = "<p>" + river + "</p>";
+  document.getElementById("board").appendChild(boardItem);
 }
 
 function reset() {
   cards = cardsArray.slice();
-  document.getElementById('seats').innerHTML = '';
-  document.getElementById('board').innerHTML = '';
+  document.getElementById("seats").innerHTML = "";
+  document.getElementById("board").innerHTML = "";
 }
